@@ -2,15 +2,15 @@
 
 syntax = "proto3";
 
-package VRWorlds.Schemas.Gemeral.Common;
+package VRWorlds.Schemas.Browser.Common;
 
-import "StandardsProtoBufs/DateTimeOffset.proto";
-import "StandardsProtoBufs/UUID.proto";
+import "VRBrowserCommonGRPCProtos/StandardsProtoBufs/DateTimeOffset.proto";
+import "VRBrowserCommonGRPCProtos/StandardsProtoBufs/UUID.proto";
 
 message PingReturn {
-	Proto.Standards.UUID ServerUuid = 1;
-	Proto.Standards.UUID KudoUuid = 2;
-	Proto.Standards.DateTimeOffset Now = 3;
+	VRWorlds.Schemas.Browser.Standards.UUID ServerUuid = 1;
+	VRWorlds.Schemas.Browser.Standards.UUID KudoUuid = 2;
+	VRWorlds.Schemas.Browser.Standards.DateTimeOffset Now = 3;
 }
 
 message PingRequest {	

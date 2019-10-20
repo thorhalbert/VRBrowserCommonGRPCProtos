@@ -1,9 +1,9 @@
 ﻿syntax = "proto3";
 
-package  VRWorlds.Schemas.General.Standards;
+package  VRWorlds.Schemas.Browser.Standards;
 
-import "StandardsProtoBufs/DateTimeOffset.proto";
-import "StandardsProtoBufs/UUID.proto";
+import "VRBrowserCommonGRPCProtos/StandardsProtoBufs/DateTimeOffset.proto";
+import "VRBrowserCommonGRPCProtos/StandardsProtoBufs/UUID.proto";
 
 enum CertificateTypes {
 	ROOT = 0;
@@ -12,19 +12,19 @@ enum CertificateTypes {
 }
 
 message Certificate {
-	Proto.Standards.UUID CertificateUuid = 1;
-	Proto.Standards.UUID RootGuid = 2;
+	VRWorlds.Schemas.Browser.Standards.UUID CertificateUuid = 1;
+	VRWorlds.Schemas.Browser.Standards.UUID RootGuid = 2;
 
 	CertificateTypes CertType = 3;
 	bool isSigner = 4;
 
 	string DistinguisedName = 5;
 
-	Proto.Standards.UUID SignerUuid = 6;
+	VRWorlds.Schemas.Browser.Standards.UUID SignerUuid = 6;
 	bytes Signature = 7;
 
-	Proto.Standards.DateTimeOffset StartTime = 8;
-	Proto.Standards.DateTimeOffset EndTime = 9;
+	VRWorlds.Schemas.Browser.Standards.DateTimeOffset StartTime = 8;
+	VRWorlds.Schemas.Browser.Standards.DateTimeOffset EndTime = 9;
 	
 	bytes CertificateBody = 10;
 }
