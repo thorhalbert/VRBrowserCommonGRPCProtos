@@ -1,0 +1,25 @@
+﻿/* Common Ping Service (prototype) */
+
+syntax = "proto3";
+
+package VRWorlds.Schemas.Browser.InterOp;
+
+import "VRBrowserCommonGRPCProtos/StandardsProtoBufs/UUID.proto";
+
+message ConnectEmissaryRequest {
+	VRWorlds.Schemas.Browser.Standards.UUID EmissaryId = 1;
+	VRWorlds.Schemas.Browser.Standards.UUID AccessToken = 2;
+	VRWorlds.Schemas.Browser.Standards.UUID BrowserSession = 3;
+	string EmissaryGRPCServer=4;
+}
+
+message ConnectEmissaryReturn {	
+	VRWorlds.Schemas.Browser.Standards.UUID DedicatedManufacturerId = 1;
+	VRWorlds.Schemas.Browser.Standards.UUID DedicatedServerId = 2;
+	bool ConnectNotAccepted = 3;
+	string ErrorText = 4;
+}
+
+service ConnectEmissary {
+	rpc ConnectEmissary(ConnectEmissaryRequest) returns (ConnectEmissaryReturn);
+}
